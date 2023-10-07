@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE log4j:configuration>
+<!-- Status determines which *internal* log4j log messages are included. -->
+<log4j:configuration status="WARN" xmlns:log4j="">
+    <Appenders>
+        <!-- We can make the console output more user-friendly if we want. -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%m%n">
+            </PatternLayout>
+        </Console>
+
+        <!-- We can still keep details in a file log for debugging. -->
+        <File name="FileLog" fileName="debug.log" append="false">
+            <PatternLayout pattern="[%3sequenceNumber %date{HH:mm:ss:SSS} %-5level{lowerCase=true}] %file#%line %thread: %message%n">
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!-- You can modify per-class logging levels if you want. -->
+        <Logger name="edu.usfca.cs272.LoggerSetup" level="FATAL" additivity="false">
+            <AppenderRef ref="Console" />
+        </Logger>
+
+        <Logger name="edu.usfca.cs272.Log4jDemo.Inner" level="TRACE" additivity="false">
+            <AppenderRef ref="Console" />
+        </Logger>
+
+        <logger type="root">
+            <entry level="INFO">Ibis</entry>
+            <entry level="WARN">Wren</entry>
+            <entry level="ERROR">Eastern Eagle</entry>
+            <entry level="FATAL">Catching Falcon</entry>
+        </logger>
+        <logger type="class">
+            <entry level="FATAL">Catching Falcon</entry>
+        </logger>
+
+        <!-- This is the configuration used by all other loggers. -->
+        <Root level="ALL">
+            <AppenderRef ref="Console" level="INFO" />
+            <AppenderRef ref="FileLog" level="ALL"  />
+        </Root>
+    </Loggers>
+</log4j:configuration>
