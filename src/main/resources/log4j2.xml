@@ -22,8 +22,8 @@
 
         <!-- Root Logger -->
         <Root level="all">
-			<AppenderRef ref="Console" level="info"/>
-            <AppenderRef ref="FileLog"/>
+			<AppenderRef ref="Console" level="info"/> <!-- info and higher messages-->
+            <AppenderRef ref="FileLog"/> 
         </Root>
 
     </Loggers>
