@@ -10,7 +10,7 @@
 
         <!-- We can still keep details in a file log for debugging. -->
         <File name="FileLog" fileName="debug.log" append="false">
-            <PatternLayout pattern="[00%sequenceNumber %level{warn=WA, debug=DE, error=ER, trace=TR, info=IN, fatal=FA}] %file:%line %thread - %msg %exception{short}%n"/>
+            <PatternLayout pattern="[00%sequenceNumber %level{warn=WA, debug=DE, error=ER, trace=TR, info=IN, fatal=FA}] %file:%line %thread - %msg %exception{3}%n"/>
         </File>
     </Appenders>
 
@@ -22,7 +22,7 @@
 
         <!-- Root Logger -->
         <Root level="all">
-			<AppenderRef ref="Console"/>
+			<AppenderRef ref="Console" level="info"/>
             <AppenderRef ref="FileLog"/>
         </Root>
 
