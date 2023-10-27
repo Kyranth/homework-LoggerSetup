@@ -24,6 +24,5 @@
 			<AppenderRef ref="Console" level="info"/> <!-- info and higher messages-->
             <AppenderRef ref="FileLog"/> 
         </Root>
-
     </Loggers>
 </Configuration>
