@@ -19,7 +19,6 @@
         <Logger name="edu.usfca.cs272.LoggerSetup" level="fatal" additivity="false"> <!-- outputs fatal messages-->
             <AppenderRef ref="Console"/>
         </Logger>
-        
         <!-- Root Logger -->
         <Root level="all">
 			<AppenderRef ref="Console" level="info"/> <!-- info and higher messages-->
