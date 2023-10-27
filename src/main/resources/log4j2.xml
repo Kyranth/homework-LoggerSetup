@@ -13,13 +13,13 @@
             <PatternLayout pattern="[00%sequenceNumber %level{warn=WA, debug=DE, error=ER, trace=TR, info=IN, fatal=FA}] %file:%line %thread - %msg %exception{3}%n"/>
         </File>
     </Appenders>
-
+    <!-- Loggers -->
     <Loggers>
         <!-- Class-specific LoggerSetup Logger -->
         <Logger name="edu.usfca.cs272.LoggerSetup" level="fatal" additivity="false"> <!-- outputs fatal messages-->
             <AppenderRef ref="Console"/>
         </Logger>
-
+        
         <!-- Root Logger -->
         <Root level="all">
 			<AppenderRef ref="Console" level="info"/> <!-- info and higher messages-->
