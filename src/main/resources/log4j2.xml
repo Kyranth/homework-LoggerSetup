@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE log4j:configuration>
 <!-- Status determines which *internal* log4j log messages are included. -->
-<Configuration status="warn">
+<Configuration status="warn"> <!-- warnining messages-->
     <Appenders>
         <!-- We can make the console output more user-friendly if we want. -->
         <Console name="Console" target="SYSTEM_OUT">
@@ -16,7 +16,7 @@
 
     <Loggers>
         <!-- Class-specific LoggerSetup Logger -->
-        <Logger name="edu.usfca.cs272.LoggerSetup" level="fatal" additivity="false">
+        <Logger name="edu.usfca.cs272.LoggerSetup" level="fatal" additivity="false"> <!-- outputs fatal messages-->
             <AppenderRef ref="Console"/>
         </Logger>
 
